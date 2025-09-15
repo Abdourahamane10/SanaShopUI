@@ -1,0 +1,14 @@
+.icon {
+  padding: 0 14px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.header-ligne1 {
+  background-color: var(--bandeau-color);
+  color: var(--main-color-white);
+  display: flex;
+  justify-content: center;
+}
