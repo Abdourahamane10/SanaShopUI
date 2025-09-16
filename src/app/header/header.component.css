@@ -12,3 +12,33 @@
   display: flex;
   justify-content: center;
 }
+
+.header-ligne2 {
+  background-color: var(--main-color-white);
+  display: flex;
+  justify-content: center;
+  column-gap: 75px;
+  row-gap: 10px; /* espace vertical réduit */
+  flex-wrap: wrap;
+  font-size: 14px;
+  border-bottom: 1px solid var(--main-color-gray);
+  min-width: 0;
+  height: auto !important; /* override la hauteur fixe Angular Material */
+  min-height: 56px; /* garde au moins la hauteur de base fixe de Angular Material (en desktop mais en mobile c'est 64px) */
+  padding: 20px 25px; /* un peu d’air */
+}
+
+.header-ligne2-containerNavigation {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 5px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.header-ligne2 span {
+  white-space: normal; /* permet le retour à la ligne */
+  word-break: break-word; /* coupe les mots longs si nécessaire */
+  text-align: center; /* si tu veux centrer ton texte */
+}
