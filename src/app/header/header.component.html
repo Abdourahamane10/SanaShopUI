@@ -1,8 +1,8 @@
 <mat-toolbar>
-  <mat-toolbar-row class="header-ligne1">
+  <mat-toolbar-row class="header-ligne header-ligne1">
     <span>Custom Toolbar</span>
   </mat-toolbar-row>
-  <mat-toolbar-row class="header-ligne2">
+  <mat-toolbar-row class="header-ligne header-ligne2">
     <span>FREE RETURN STANDARD SHOPPING ORDER *99+</span>
     <div class="header-ligne2-containerNavigation">
       <a mat-button routerLink="#">Mon compte</a>
@@ -11,6 +11,36 @@
       <a mat-button routerLink="#">Ma liste de souhaits</a>
       <a mat-button routerLink="#">Panier</a>
       <a mat-button routerLink="#">Log in</a>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="header-ligne header-ligne3">
+    <span class="jstore">JSTORE</span>
+    <div class="containerSearch-icones">
+      <form class="search-form">
+        <mat-form-field class="search-field">
+          <mat-label>Rechercher...</mat-label>
+          <input matInput placeholder="Rechercher">
+          <button
+          type="submit"
+          mat-icon-button
+          matSuffix
+          aria-label="Rechercher"
+          >
+            <mat-icon fontIcon="search"></mat-icon>
+          </button>
+        </mat-form-field>
+      </form>
+      <div class="container-call">
+        <mat-icon aria-hidden="false" aria-label="phone icon" fontIcon="phone"></mat-icon>
+        <div class="container-infoCall">
+          <span>NOUS APPELER</span>
+          <span>+331 01 21 36 74</span>
+        </div>
+      </div>
+      <mat-icon aria-hidden="false" aria-label="user icon" fontIcon="person"></mat-icon>
+      <mat-icon aria-hidden="false" aria-label="user icon" fontIcon="local_mall"></mat-icon>
+      <mat-icon aria-hidden="false" aria-label="user icon" fontIcon="shopping_cart"></mat-icon>
+      <mat-icon aria-hidden="false" aria-label="user icon" fontIcon="chevron_left"></mat-icon>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
