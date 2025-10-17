@@ -6,70 +6,20 @@
   flex: 1 1 auto;
 }
 
-.header-ligne, .header-ligne2-containerNavigation, .containerSearch-icones, .container-call {
+.header-ligne {
   display: flex;
   justify-content: center;
+  gap: 30px;
 }
 
 .header-ligne1 {
   background-color: var(--bandeau-color);
   color: var(--main-color-white);
-}
-
-.header-ligne2 {
-  background-color: var(--main-color-white);
-  column-gap: 75px;
-  row-gap: 10px; /* espace vertical réduit */
-  font-size: 14px;
-  border-bottom: 1px solid var(--main-color-gray);
-}
-
-.header-ligne2-containerNavigation {
-  column-gap: 20px;
-  row-gap: 5px;
-  flex-wrap: wrap;
   min-width: 0;
-}
-
-.header-ligne2 span {
-  white-space: normal; /* permet le retour à la ligne */
-  word-break: break-word; /* coupe les mots longs si nécessaire */
-  text-align: center; /* si tu veux centrer ton texte */
-}
-
-.header-ligne2, .header-ligne3 {
-  min-width: 0;
-  height: auto !important; /* override la hauteur fixe Angular Material */
-  min-height: 56px; /* garde au moins la hauteur de base fixe de Angular Material (en desktop mais en mobile c'est 64px) */
-  padding: 20px 25px; /* un peu d’air */
+  height: auto !important;
+  min-height: 56px;
+  padding: 20px 25px;
   flex-wrap: wrap;
-}
-
-.header-ligne3 {
-  align-items: center;
-  column-gap: 80px;
-  row-gap: 10px;
-  padding-bottom: 0;
-  background-color: var(--main-color-white);
-}
-
-.containerSearch-icones {
-  align-items: center;
-  column-gap: 20px;
-  row-gap: 5px;
-  flex-wrap: wrap;
-}
-
-.container-call {
-  align-items: center;
-  column-gap: 20px;
-}
-
-.container-infoCall {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 14px;
 }
 
 ::ng-deep .mat-mdc-form-field-subscript-wrapper {
@@ -77,8 +27,24 @@
   height: 0;
 }
 
-.jstore {
-  font-weight: 500;
-  color: var(--bandeau-color);
+.leftContainerNavigationHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }
 
+mat-toolbar-row button[mat-button], .headerNavigationBtn {
+  color: var(--main-color-white);
+}
+
+.rightContainerNavigationHeader {
+  display: flex;
+  justify-content: center;
+}
+
+/*Meida query*/
+@media (max-width: 712px) {
+  .spacer {
+    display: none;
+  }
+}

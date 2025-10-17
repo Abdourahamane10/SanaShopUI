@@ -8,7 +8,13 @@ import { MatInputModule } from '@angular/material/input';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatToolbarModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule],
+  imports: [
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
