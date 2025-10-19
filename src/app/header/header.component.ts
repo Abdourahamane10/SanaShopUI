@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
+import { SideNavService } from '../side-nav.service';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -13,9 +15,20 @@ import { MatInputModule } from '@angular/material/input';
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  constructor(private sideNavService: SideNavService) {}
+
+  toggleMenu() {
+    this.sideNavService.toggle();
+  }
+
+  testClick() {
+    console.log('🟢 Bouton header cliqué');
+    this.toggleMenu();
+  }
+}
