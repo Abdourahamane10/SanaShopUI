@@ -1,18 +1,78 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <app-header></app-header>
-    <mat-sidenav-container class="example-sidenav-container"
-                          [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
-      <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
-                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="236">
+<div class="principalContainer" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-sidenav-container class="sidenavContainer"
+                        [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                [fixedInViewport]="mobileQuery.matches" fixedTopGap="236">
+      <div class="sideNavWrapper">
         <mat-nav-list>
-          @for (nav of fillerNav; track nav) {
-            <a mat-list-item routerLink=".">{{nav}}</a>
-          }
+          <mat-accordion class="menu-accordion" multi>
+            <!-- Tableau de board (avec sous-menus dans un panel) -->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>dashboard</mat-icon>
+                  <span>Tableau de bord</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-action-list>
+                <a mat-list-item routerLink="/dashboard">Tableau de bord</a>
+              </mat-action-list>
+            </mat-expansion-panel>
+
+            <!-- Paramétrage (avec sous-menus dans un panel) -->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>settings_applications</mat-icon>
+                  <span>Paramétrages</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-action-list>
+                <a mat-list-item routerLink="/parametrage/add">Paramétrer</a>
+                <a mat-list-item routerLink="/parametrage">Paramétrages</a>
+              </mat-action-list>
+            </mat-expansion-panel>
+
+            <!-- Catégories (avec sous-menus dans un panel) -->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>category</mat-icon>
+                  <span>Catégories</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-action-list>
+                <a mat-list-item routerLink="/categories/add">Ajouter une catégorie</a>
+                <a mat-list-item routerLink="/categories">Catégories</a>
+              </mat-action-list>
+            </mat-expansion-panel>
+
+            <!-- Produits -->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>inventory_2</mat-icon>
+                  <span>Produits</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-action-list>
+                <a mat-list-item routerLink="/products/add">Ajouter un produit</a>
+                <a mat-list-item routerLink="/products">Produits</a>
+              </mat-action-list>
+            </mat-expansion-panel>
+          </mat-accordion>
         </mat-nav-list>
-      </mat-sidenav>
+      </div>
+    </mat-sidenav>
 
-      <mat-sidenav-content>
-
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-  </div>
+    <mat-sidenav-content>
+      <app-header></app-header>
+      <div class="CentralContent"></div>
+      <app-footer [nomAppli]="appliName"></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

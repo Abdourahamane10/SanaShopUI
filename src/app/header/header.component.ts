@@ -26,9 +26,4 @@ export class HeaderComponent {
   toggleMenu() {
     this.sideNavService.toggle();
   }
-
-  testClick() {
-    console.log('🟢 Bouton header cliqué');
-    this.toggleMenu();
-  }
 }

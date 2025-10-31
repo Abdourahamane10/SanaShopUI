@@ -1,13 +1,26 @@
 import { MediaMatcher } from '@angular/cdk/layout';
-import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, ViewChild, inject, viewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  OnDestroy,
+  ViewChild,
+  inject,
+  viewChild,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 
 import { SideNavService } from '../side-nav.service';
 import { HeaderComponent } from '../header/header.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-side-nav',
@@ -19,13 +32,18 @@ import { HeaderComponent } from '../header/header.component';
     MatSidenavModule,
     MatListModule,
     HeaderComponent,
+    FooterComponent,
+    MatExpansionModule,
   ],
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideNavComponent implements OnDestroy, AfterViewInit {
   @ViewChild('snav') sideNav!: MatSidenav;
   mobileQuery: MediaQueryList;
+  appliName: string = 'Sana shop';
+  accordion = viewChild.required(MatAccordion);
 
   fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
 
@@ -57,8 +75,4 @@ export class SideNavComponent implements OnDestroy, AfterViewInit {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-
-  // shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(
-  //   window.location.host
-  // );
 }

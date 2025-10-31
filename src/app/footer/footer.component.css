@@ -1,0 +1,73 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.footer {
+  min-height: 64px !important;
+  display: flex;
+  align-items: center;
+  background-color: var(--bandeau-color);
+  overflow-wrap: break-word;
+}
+
+.footer-ligne {
+  display: flex;
+  background-color: var(--bandeau-color);
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--main-color-white);
+  flex-wrap: wrap;
+  overflow: visible;
+  padding: 20px 38px;
+}
+
+.appliName {
+  margin-left: 5px;
+  color: beige;
+  font-weight: 600;
+}
+
+.footerMentionsLegales, .footerVersion {
+  align-items: center;
+  margin: 0;
+}
+
+mat-toolbar {
+  padding: 0; /* évite un léger décalage vertical */
+}
+
+/*Meida query*/
+@media (max-width: 712px) {
+  .spacer {
+    display: none;
+  }
+
+  .footer-ligne {
+    text-align: center; /* ✅ centre le texte */
+    gap: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 100%;
+  }
+
+  .footerMentionsLegales,
+  .footerVersion {
+    text-align: center; /* ✅ centre leur contenu */
+    width: 100%; /* ✅ occupe toute la largeur disponible */
+    margin: 0;
+  }
+
+  .footerMentionsLegales span {
+    white-space: normal; /* ✅ autorise le retour à la ligne */
+    overflow-wrap: break-word; /* ✅ coupe les mots si besoin */
+    word-break: normal;
+  }
+
+  .footer {
+    min-height: 100px !important;
+  }
+
+    mat-toolbar {
+      padding: 10; /* évite un léger décalage vertical */
+    }
+}
