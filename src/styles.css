@@ -1,11 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 :root {
   --bandeau-color: #008080;
   --main-color-white: white;
   --main-color-black: #1d1d1d;
   --main-color-gray: gray;
+  --main-color-blanCasse: #f2f2f2;
+}
+
+/* Place this in styles.scss (ou dans le style du composant avec ::ng-deep) */
+/* Applique uniquement au sidenav pour éviter effets globaux */
+mat-sidenav,
+mat-sidenav .sideNavWrapper {
+  --main-sidenav-foreground: #fff;
+}
+
+/* PANEL background already set in ton CSS, on force couleurs texte / icônes partout */
+mat-sidenav mat-expansion-panel,
+mat-sidenav mat-expansion-panel-header,
+mat-sidenav mat-expansion-panel .mat-expansion-panel-content,
+mat-sidenav mat-action-list,
+mat-sidenav mat-nav-list {
+  color: #fff !important;
+  background: transparent !important;
+}
+
+/* Les titres / descriptions */
+mat-sidenav .mat-expansion-panel-header-title,
+mat-sidenav .mat-expansion-panel-header-description,
+mat-sidenav .mat-expansion-panel-body,
+mat-sidenav .mat-expansion-panel-content,
+mat-sidenav mat-action-list a,
+mat-sidenav mat-action-list a .mat-list-item-content,
+mat-sidenav mat-action-list a .mat-line {
+  color: #fff !important;
+}
+
+/* Les icônes Material (mat-icon) */
+mat-sidenav mat-icon,
+mat-sidenav .mat-icon {
+  color: #fff !important;
+  fill: #fff !important;
+  /* pour certaines icônes SVG */
+}
+
+/* Chevrons / indicateurs d'expansion — plusieurs variantes possibles selon la version */
+mat-sidenav .mat-expansion-indicator,
+mat-sidenav .mat-expansion-indicator,
+mat-sidenav .mat-expansion-indicator::after,
+mat-sidenav .mat-expansion-indicator svg,
+mat-sidenav .mat-expansion-indicator path,
+mat-sidenav .mat-expansion-indicator .mat-icon {
+  color: #fff !important;
+  fill: #fff !important;
+  border-color: #fff !important;
+  /* si pseudo-élément utilise border */
+}
+
+/* MDC list (Material 3) classes — couvre les nouvelles classes mdc/mdc-list */
+mat-sidenav .mdc-list .mdc-list-item,
+mat-sidenav .mat-mdc-list .mat-mdc-list-item,
+mat-sidenav .mdc-list .mdc-list-item__primary-text,
+mat-sidenav .mdc-list .mdc-list-item__text {
+  color: #fff !important;
+}
+
+/* Si l'encapsulation empêche de cibler correctement depuis le composant,
+   utiliser ::ng-deep dans le fichier scss du composant : */
+:host ::ng-deep mat-expansion-panel .mat-expansion-indicator,
+:host ::ng-deep mat-expansion-panel .mat-icon {
+  color: #fff !important;
+  fill: #fff !important;
 }
