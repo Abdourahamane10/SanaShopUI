@@ -71,7 +71,8 @@
 
     <mat-sidenav-content>
       <app-header></app-header>
-      <div class="CentralContent"></div>
+      <!-- <div class="CentralContent"></div> -->
+      <router-outlet class="CentralContent"></router-outlet>
       <app-footer [nomAppli]="appliName"></app-footer>
     </mat-sidenav-content>
   </mat-sidenav-container>
