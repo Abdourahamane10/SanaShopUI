@@ -1,5 +1,5 @@
 import { RouterOutlet } from '@angular/router';
-import { SideNavComponent } from './side-nav/side-nav.component';
+import { SideNavComponent } from './presentation/layout/main-layout/side-nav/side-nav.component';
 
 import { MediaMatcher } from '@angular/cdk/layout';
 import {

@@ -14,13 +14,13 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { provideNativeDateAdapter } from '@angular/material/core';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
+import { RouterOutlet } from '@angular/router';
 
-import { SideNavService } from '../side-nav.service';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
+import { SideNavService } from '../../../../side-nav.service';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from '../../components/footer/footer.component';
+
 
 @Component({
   selector: 'app-side-nav',
@@ -34,7 +34,8 @@ import { FooterComponent } from '../footer/footer.component';
     HeaderComponent,
     FooterComponent,
     MatExpansionModule,
-  ],
+    RouterOutlet
+],
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
