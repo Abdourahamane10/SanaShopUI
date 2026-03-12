@@ -44,6 +44,7 @@ app-footer {
 
 .CentralContent {
   flex: 1 1 auto;
+  padding: 30px 20px;
 }
 
 mat-expansion-panel {
@@ -72,4 +73,9 @@ mat-expansion-panel-header {
 
 mat-panel-title {
   gap: 10px;
+}
+
+.active-link {
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
 }

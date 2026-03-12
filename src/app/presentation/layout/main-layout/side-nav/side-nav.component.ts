@@ -15,7 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 import { SideNavService } from '../../../../side-nav.service';
 import { HeaderComponent } from '../../components/header/header.component';
@@ -34,13 +34,16 @@ import { FooterComponent } from '../../components/footer/footer.component';
     HeaderComponent,
     FooterComponent,
     MatExpansionModule,
-    RouterOutlet
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive
 ],
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideNavComponent implements OnDestroy, AfterViewInit {
+
   @ViewChild('snav') sideNav!: MatSidenav;
   mobileQuery: MediaQueryList;
   appliName: string = 'Sana shop';

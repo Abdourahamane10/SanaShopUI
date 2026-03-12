@@ -1,0 +1,77 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.item-grid {
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.command-livrees {
+  background-color: green;
+}
+
+.command-attente-livraison {
+  background-color: orange;
+}
+
+.command-annulees {
+  background-color: red;
+}
+
+.command-chiffre-affaire {
+  background-color: blueviolet;
+}
+
+.command-clients {
+  background-color: dodgerblue;
+}
+
+.command-remboursees {
+  background-color:indianred;
+}
+
+.clients-newClients {
+  display: flex;
+}
+
+.clients {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.new-clients {
+  margin-left: auto;
+}
+
+.compteur {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.command-livrees, .command-annulees, .command-chiffre-affaire, .command-clients, .command-remboursees {
+  color: white;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  margin: auto;
+  margin-top: 30px;
+  align-self: center;
+}
+
+
+
+/* petit écran */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

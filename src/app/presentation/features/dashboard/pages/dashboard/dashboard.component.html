@@ -1,0 +1,40 @@
+<div class="grid">
+  <div class="item-grid command-livrees">
+    <p>Commandes livrées</p>
+    <p class="compteur">55</p>
+  </div>
+  <div class="item-grid command-attente-livraison">
+    <p>Commandes en attente de livarison</p>
+    <p class="compteur">12</p>
+  </div>
+  <div class="item-grid command-annulees">
+    <p>Commandes annulées</p>
+    <p class="compteur">4</p>
+  </div>
+  <div class="item-grid command-chiffre-affaire">
+    <p>Chiffres d'affaire 2026</p>
+    <p class="compteur">+1200€</p>
+  </div>
+  <div class="item-grid command-clients">
+    <div class="clients-newClients">
+      <div class="clients">
+        <p>Clients</p>
+        <p class="compteur">120</p>
+      </div>
+      <p class="new-clients">+15</p>
+    </div>
+  </div>
+  <div class="item-grid command-remboursees">
+    <p>Commandes remboursées</p>
+    <p class="compteur">2</p>
+  </div>
+</div>
+
+<div class="chart-container">
+  <canvas
+    baseChart
+    [data]="chartData"
+    [type]="'line'">
+  </canvas>
+</div>
+

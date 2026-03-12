@@ -5,9 +5,9 @@
                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="236">
       <div class="sideNavWrapper">
         <mat-nav-list>
-          <mat-accordion class="menu-accordion" multi>
+          <mat-accordion class="menu-accordion" multi="false">
             <!-- Tableau de board (avec sous-menus dans un panel) -->
-            <mat-expansion-panel>
+            <mat-expansion-panel routerLinkActive #rlaDash="routerLinkActive" [expanded]="rlaDash.isActive">
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   <mat-icon>dashboard</mat-icon>
@@ -16,12 +16,12 @@
               </mat-expansion-panel-header>
 
               <mat-action-list>
-                <a mat-list-item routerLink="/dashboard">Tableau de bord</a>
+                <a mat-list-item routerLink="/dashboard" routerLinkActive="active-link">Tableau de bord</a>
               </mat-action-list>
             </mat-expansion-panel>
 
             <!-- Paramétrage (avec sous-menus dans un panel) -->
-            <mat-expansion-panel>
+            <mat-expansion-panel routerLinkActive #rlaParam="routerLinkActive" [expanded]="rlaParam.isActive">
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   <mat-icon>settings_applications</mat-icon>
@@ -30,13 +30,13 @@
               </mat-expansion-panel-header>
 
               <mat-action-list>
-                <a mat-list-item routerLink="/parametrage/add">Paramétrer</a>
-                <a mat-list-item routerLink="/parametrage">Paramétrages</a>
+                <a mat-list-item routerLink="/parametrage/add" routerLinkActive="active-link">Paramétrer</a>
+                <a mat-list-item routerLink="/parametrage" routerLinkActive="active-link">Paramétrages</a>
               </mat-action-list>
             </mat-expansion-panel>
 
             <!-- Catégories (avec sous-menus dans un panel) -->
-            <mat-expansion-panel>
+            <mat-expansion-panel routerLinkActive #rlaCat="routerLinkActive" [expanded]="rlaCat.isActive">
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   <mat-icon>category</mat-icon>
@@ -45,13 +45,13 @@
               </mat-expansion-panel-header>
 
               <mat-action-list>
-                <a mat-list-item routerLink="/categories/add">Ajouter une catégorie</a>
-                <a mat-list-item routerLink="/categories">Catégories</a>
+                <a mat-list-item routerLink="/categories/add" routerLinkActive="active-link">Ajouter une catégorie</a>
+                <a mat-list-item routerLink="/categories" routerLinkActive="active-link">Catégories</a>
               </mat-action-list>
             </mat-expansion-panel>
 
             <!-- Produits -->
-            <mat-expansion-panel>
+            <mat-expansion-panel routerLinkActive #rlaPro="routerLinkActive" [expanded]="rlaPro.isActive">
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   <mat-icon>inventory_2</mat-icon>
@@ -60,8 +60,8 @@
               </mat-expansion-panel-header>
 
               <mat-action-list>
-                <a mat-list-item routerLink="/products/add">Ajouter un produit</a>
-                <a mat-list-item routerLink="/products">Produits</a>
+                <a mat-list-item routerLink="/products/add" routerLinkActive="active-link">Ajouter un produit</a>
+                <a mat-list-item routerLink="/products" routerLinkActive="active-link">Produits</a>
               </mat-action-list>
             </mat-expansion-panel>
           </mat-accordion>
@@ -72,7 +72,9 @@
     <mat-sidenav-content>
       <app-header></app-header>
       <!-- <div class="CentralContent"></div> -->
-      <router-outlet class="CentralContent"></router-outlet>
+      <div class="CentralContent">
+        <router-outlet></router-outlet>
+      </div>
       <app-footer [nomAppli]="appliName"></app-footer>
     </mat-sidenav-content>
   </mat-sidenav-container>
