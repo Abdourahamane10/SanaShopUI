@@ -8,5 +8,28 @@ export const routes: Routes = [
       import('./presentation/layout/main-layout/side-nav/side-nav.component').then(
         (m) => m.SideNavComponent,
       ),
+    children: [
+      //redirection racine
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./presentation/features/dashboard/dashboard.routes').then(
+            (m) => m.routes,
+          ),
+      },
+    ],
+  },
+
+  //Layout auth
+
+  //Page 404
+  {
+    path: '**',
+    redirectTo: 'notfound',
   },
 ];
